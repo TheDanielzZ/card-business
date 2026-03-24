@@ -21,10 +21,5 @@ jobs:
           pip install pytest
       - name: executar testes
         run: pytest
-deploy:
-  needs: test
-  runs-on: ubuntu-latest
-  if: github.event_name == 'push'
-  steps:
-    - name: Passo de Deploy (Placeholder)
-      run: echo "Deploy realizado com sucesso!"
+    
+
