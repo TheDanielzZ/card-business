@@ -27,4 +27,4 @@ deploy:
   if: github.event_name == 'push'
   steps:
     - name: Passo de Deploy (Placeholder)
-      run: echo "Deploy realizado com sucesso!!"
+      run: echo "Deploy realizado com sucesso!"
