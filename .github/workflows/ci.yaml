@@ -1,1 +1,30 @@
+name: CI/CD Pipeline
 
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configurar Python 3.9
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Instalar dependencias
+        run: 
+          python -m --upgrade pip 
+          pip install -r requirements.txt
+          pip install pytest
+      - name: executar testes
+        run: pytest
+deploy:
+  needs: test
+  runs-on: ubuntu-latest
+  if: github.event_name == 'push'
+  steps:
+    - name: Passo de Deploy (Placeholder)
+      run: echo "Deploy realizado com sucesso!"
