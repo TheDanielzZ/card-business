@@ -17,6 +17,8 @@ jobs:
       - name: Instalar dependencias
         run: 
           python -m --upgrade pip 
+      - name: Instalar requirements
+        run:
           pip install -r requirements.txt
       - name: instalacao do pytest
         run:
